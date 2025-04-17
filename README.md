@@ -16,23 +16,23 @@ Since every payload file is identical and filled with zeroes, compression is ext
 
 When you run the script, you'll be prompted for the following:
 
-`Bomb decompressed size? (e.g., '1 PB', '500 GB')`
+`Bomb decompressed size:`
 
- - This is the total uncompressed size you want the final ZIP bomb to expand to.
- - Units supported: B, KB, MB, GB, TB, PB.
- - Example: 500 GB
+- This is the total uncompressed size you want the final ZIP bomb to expand to.
+- Units supported: B, KB, MB, GB, TB, PB.
+- Example: 500 GB
 
-`Payload file size? (default 1 MB, format <number> <unit>):`
+`Payload file size:`
 
- - Size of the individual file inside the ZIP archive.
- - Default is 1 MB if you press Enter.
- - The smaller this is, the more files the ZIP bomb will contain.
- - Example: 1 MB
+- Size of the individual file inside the ZIP archive.
+- Default is 1 MB.
+- The smaller this is, the more files the ZIP bomb will contain.
+- Example: 1 MB
 
-`Output zip name? (default: bomb.zip):`
+`Output zip name:`
 
- - Name of the final ZIP file to be created.
- - Default is `bomb.zip`.
+- Name of the final ZIP file to be created.
+- Default is `bomb.zip`.
 
 ### After input
 
@@ -47,20 +47,21 @@ Creating ZIP bomb:
     Output:               bomb.zip
 ```
 
- - Payload size: Size of the file being copied inside the ZIP.
- - Total uncompressed: Target final size when the ZIP is extracted.
- - File count: How many copies of the payload file are added.
- - Output: Filename of the ZIP bomb.
+- Payload size: Size of the file being copied inside the ZIP.
+- Total uncompressed: Target final size when the ZIP is extracted.
+- File count: How many copies of the payload file are added.
+- Output: Filename of the ZIP bomb.
 
 It will then show live progress as files are added to the ZIP.
 
 ## What's in the ZIP
 
 Inside the ZIP there are tens of thousands to millions of identical files like:
- - bomb_0.txt
- - bomb_1.txt
- - bomb_2.txt
- - ...
+
+- bomb_0.txt
+- bomb_1.txt
+- bomb_2.txt
+- ...
 
 All filled with null bytes. The compression algorithm detects repetition and compresses it heavily.
 
