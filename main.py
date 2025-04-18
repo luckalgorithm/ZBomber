@@ -45,7 +45,7 @@ with open(PAYLOAD_NAME, "wb") as f:
 
 with zipfile.ZipFile(zip_name, "w", compression=zipfile.ZIP_DEFLATED) as zf:
     for i in range(REPEATS):
-        arcname = f"bomb_{i}.txt"
+        arcname = f"{i}.txt"
         zf.write(PAYLOAD_NAME, arcname)
         progress_bar(i + 1, REPEATS)
 
