@@ -14,8 +14,6 @@ Since every payload file is identical and filled with zeroes, compression is ext
 
 ## CLI
 
-Uses format `<number> <unit>` (e.g., 500 GB, 1 TB). Supported units: B, KB, MB, GB, TB, PB.
-
 When you run the script, you'll be prompted for the following:
 
 `Bomb decompressed size:`
@@ -33,6 +31,10 @@ When you run the script, you'll be prompted for the following:
 
 - Name of the final ZIP file to be created.
 - Default is `bomb.zip`.
+
+> [!NOTE]
+> Use the format `<number> <unit>` when entering values for decompressed size and payload size (e.g., `500 GB`, `1 TB`).\
+> Supported units: B, KB, MB, GB, TB, PB
 
 Once input is provided, a summary of the configuration is shown:
 
@@ -63,6 +65,5 @@ Inside the ZIP there are tens of thousands to millions of identical files like:
 
 All filled with null bytes. The compression algorithm detects repetition and compresses it heavily.
 
-## Disclaimer
-
-This tool is for educational purposes only. Do not deploy ZIP bombs on systems you do not own or have permission to test. Misuse can result in data loss or system damage.
+> [!WARNING]
+> This tool is for educational purposes only. Do not deploy ZIP bombs on systems you do not own or have permission to test. Misuse can result in data loss or system damage.
