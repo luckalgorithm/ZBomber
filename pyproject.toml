@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ByteBomber"
+version = "1.2.0"
+description = "ZIP bomb generator (for educational purposes only)"
+readme = "README.md"
+requires-python = ">=3.6,<4.0"
+license = { text = "MIT" }
+authors = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Security",
+  "Topic :: Utilities",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "Development Status :: 5 - Production/Stable"
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/luckalgorithm/ByteBomber"
+Documentation = "https://luckalgorithm.github.io/ByteBomber"
+Source = "https://github.com/luckalgorithm/ByteBomber"
+IssueTracker = "https://github.com/luckalgorithm/ByteBomber/issues"
+
+[project.scripts]
+bytebomber = "bytebomber.__main__:main"
