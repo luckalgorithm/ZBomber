@@ -8,7 +8,7 @@ To install ByteBomber, run the following command: `pip install bytebomber` (Alte
 
 Once installed, you can integrate ByteBomber into your own project by importing the build_zip_bomb function: `from bytebomber import build_zip_bomb`
 
-You can then call build_zip_bomb() in your code to generate ZIP bombs.
+You can then call `build_zip_bomb()` in your code to generate ZIP bombs.
 
 ## What ByteBomber Does
 
