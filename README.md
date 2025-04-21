@@ -32,9 +32,27 @@ When you run the script, you'll be prompted for the following:
 - Name of the final ZIP file to be created.
 - Default is `bomb.zip`.
 
+`Bomb directory name:`
+
+- Directory where files are extracted when the bomb is decompressed.
+- Default is `bomb-dir`.
+
+Use the format `<number> <unit>` when entering values (e.g., `500 GB`, `1 TB`).
+
+| Supported Unit | Size | Size In Bytes |
+|----------------|----------|----------------
+| B (byte) | 1 B | 1
+| KB (Kilobyte) | 1,024 B | 1,024 
+| MB (Megabyte) | 1,024 KB | 1,048,576
+| GB (Gigabyte) | 1,024 MB | 1,073,741,824
+| TB (Terabyte) | 1,024 GB | 1,099,511,627,776
+| PB (Petabyte) | 1,024 TB | 1,125,899,906,842,624
+| EB (Exabyte) | 1,024 PB | 1,152,921,504,606,846,976
+| ZB (Zettabyte) | 1,024 EB | 1,180,591,620,717,411,303,424
+| YB (Yottabyte) | 1,024 ZB | 1,208,925,819,614,629,174,706,176
+
 > [!NOTE]
-> Use the format `<number> <unit>` when entering values for decompressed size and payload size (e.g., `500 GB`, `1 TB`).\
-> Supported units: B, KB, MB, GB, TB, PB
+> For most purposes, GB or TB ranges are more than sufficient to stress a system. PB, EB, ZB, and YB represent astronomical data sizes far beyond what typical systems can handle.
 
 Once input is provided, a summary of the configuration is shown:
 
@@ -66,4 +84,4 @@ Inside the ZIP there are tens of thousands to millions of identical files like:
 All filled with null bytes. The compression algorithm detects repetition and compresses it heavily.
 
 > [!WARNING]
-> This tool is for educational purposes only. Do not deploy ZIP bombs on systems you do not own or have permission to test. Misuse can result in data loss or system damage.
+> **ByteBomber is for educational purposes only. Do not deploy ZIP bombs on systems you do not own or have permission to test. Misuse can result in data loss or system damage.**
