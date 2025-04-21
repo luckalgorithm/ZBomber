@@ -8,7 +8,10 @@ UNITS = {
     "MB": 1 << 20,
     "GB": 1 << 30,
     "TB": 1 << 40,
-    "PB": 1 << 50
+    "PB": 1 << 50,
+    "EB": 1 << 60,
+    "ZB": 1 << 70,
+    "YB": 1 << 80,
 }
 
 def progress_bar(iteration, total, bar_length=50):
