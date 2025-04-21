@@ -29,7 +29,7 @@ def get_bytes(amount_str):
     except:
         raise ValueError("Format: <number> <unit>, e.g., 1 PB or 500 GB")
 
-def main():
+def build_zip_bomb():
     target_input = input("Bomb decompressed size: ") or "500 GB"
     payload_input = input("Payload file size: ") or "1 MB"
     zip_name = input("Output zip name: ") or "bomb.zip"
