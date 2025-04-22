@@ -1,6 +1,6 @@
 # ByteBomber
 
-ByteBomber is a tool for createing a ZIP bombs. A ZIP bomb is a highly compressed ZIP file that massively expands in size when extracted. ByteBomber is designed to demonstrate how compression algorithms (specifically ZIP's DEFLATE) can be used to exhaust system resources (disk space, RAM, or CPU), potentially crashing systems or causing instability.
+ByteBomber is a tool for creating ZIP bombs. A ZIP bomb is a highly compressed ZIP file that massively expands in size when extracted. ByteBomber is designed to demonstrate how compression algorithms (specifically ZIP's DEFLATE) can be used to exhaust system resources (disk space, RAM, or CPU), potentially crashing systems or causing instability.
 
 ## Installation
 
