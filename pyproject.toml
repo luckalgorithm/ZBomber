@@ -4,7 +4,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ByteBomber"
-version = "2.1.1"
 description = "ZIP bomb generator (for educational purposes only)"
 readme = "README.md"
 requires-python = ">=3.6,<4.0"
