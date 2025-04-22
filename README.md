@@ -6,7 +6,7 @@ ByteBomber is a tool for createing a ZIP bombs. A ZIP bomb is a highly compresse
 
 To install ByteBomber, run the following command: `pip install bytebomber` (Alternatively, use `pip3` if necessary.)
 
-Once installed, you can integrate ByteBomber into your own project by importing the `build_zip_bomb` function: `from ByteBomber import build_zip_bomb`
+Once installed, you can integrate ByteBomber into your own project by importing the `build_zip_bomb` function: `from bytebomber import build_zip_bomb`
 
 You can then call `build_zip_bomb()` in your code to generate ZIP bombs.
 
