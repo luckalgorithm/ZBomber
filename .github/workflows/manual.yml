@@ -11,12 +11,13 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v3
         with:
+          token: ${{ secrets.GH_PAT }}
           ref: main
 
       - name: Commit all changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Your Name"
+          git config user.email "your-email@example.com"
           git add -A
           git commit -m "Manual publish of changes" || echo "No changes to commit"
-          git push
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }} HEAD:main
