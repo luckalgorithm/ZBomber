@@ -18,6 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup artifact upload
+        uses: actions/upload-artifact@v3
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
