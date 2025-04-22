@@ -91,4 +91,5 @@ Inside the ZIP there are tens of thousands to millions of identical files like:
 
 All filled with null bytes. The compression algorithm detects repetition and compresses it heavily.
 
-> [!WARNING] > **ByteBomber is for educational purposes only. Do not deploy ZIP bombs on systems you do not own or have permission to test. Misuse can result in data loss or system damage.**
+> [!WARNING]
+> **ByteBomber is for educational purposes only. Do not deploy ZIP bombs on systems you do not own or have permission to test. Misuse can result in data loss or system damage.**
