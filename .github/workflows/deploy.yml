@@ -1,8 +1,6 @@
-name: Build and Deploy Jekyll Site
+name: Build and Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -15,27 +13,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Ruby
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-
-      - name: Install Jekyll and build site
+          
+      - name: Install Jekyll and Bundler
         run: |
           gem install bundler jekyll
-          bundle init
-          echo 'gem "jekyll"' >> Gemfile
           bundle install
-          bundle exec jekyll new . --force
+
+      - name: Build the site
+        run: |
           bundle exec jekyll build
 
-      - name: Upload Pages artifact manually
-        uses: actions/upload-artifact@v3
+      - name: Upload site to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: github-pages
           path: ./_site
 
   deploy:
@@ -43,10 +40,11 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v2
+
 
 
 
