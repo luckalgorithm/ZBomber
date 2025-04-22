@@ -32,9 +32,10 @@ jobs:
           bundle exec jekyll new . --force
           bundle exec jekyll build
 
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload Pages artifact manually
+        uses: actions/upload-artifact@v3
         with:
+          name: github-pages
           path: ./_site
 
   deploy:
@@ -46,5 +47,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
 
 
