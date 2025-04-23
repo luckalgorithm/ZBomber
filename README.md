@@ -30,7 +30,7 @@ build_zip_bomb(
 | `verbose` | If `True`, shows config + summary output. Default: `True`. |
 | `show_progress` | If `True`, shows a live progress bar. Default: `True`. |
 
-Use the format `<number> <unit>` when entering values (e.g., `500 GB`, `1 TB`). ByteBomber supports B, KB, MB, GB, TB, PB, EB, ZB, and YB. Valuse in the GB-TB range are usaully more than enough to stress a system. Values above TB are astronomical data zizes far more than most systems can handle.
+Use the format `<number> <unit>` when entering values (e.g., `500 GB`, `1 TB`). ByteBomber supports B, KB, MB, GB, TB, PB, EB, ZB, and YB. Valuse in the GB-TB range are usually more than enough to stress a system. Values above TB are astronomical data zizes far more than most systems can handle.
 
 > [!NOTE]
 > The program accepts values using standard units (e.g., MB, GB), but internally it treats them as binary units (e.g., MiB, GiB).
