@@ -23,10 +23,8 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/luckalgorithm/ByteBomber"
-Documentation = "https://luckalgorithm.github.io/ByteBomber"
 Source = "https://github.com/luckalgorithm/ByteBomber"
-IssueTracker = "https://github.com/luckalgorithm/ByteBomber/issues"
+Documentation = "https://luckalgorithm.github.io/ByteBomber"
 
 [project.scripts]
 bytebomber = "bytebomber.__main__:build_zip_bomb"
