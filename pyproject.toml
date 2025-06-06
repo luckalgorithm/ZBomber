@@ -23,8 +23,8 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Source = "https://github.com/luckalgorithm/ByteBomber"
-Documentation = "https://luckalgorithm.github.io/ByteBomber"
+Source = "https://github.com/redkitlab/ByteBomber"
+Documentation = "https://github.com/redkitlab/ByteBomber/blob/main/README.md"
 
 [project.scripts]
 bytebomber = "bytebomber.__main__:main"
